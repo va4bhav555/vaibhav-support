@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Support Vaibhav's startups and open web projects.">
+<title>Support Vaibhav — Web Developer</title>
+<style>
+:root{
+  --bg:#07070a;--card:#101116;--card2:#15161d;--text:#f5f5f7;--muted:#9b9ca8;
+  --accent:#8b5cf6;--accent2:#22d3ee;--border:#262733;--success:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 15% 5%,rgba(139,92,246,.18),transparent 30%),
+    radial-gradient(circle at 85% 15%,rgba(34,211,238,.12),transparent 28%),var(--bg);
+  color:var(--text);min-height:100vh;line-height:1.5;
+}
+.container{width:min(1050px,92%);margin:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.5px}
+.logo span{color:var(--accent2)}
+.navtag{font-size:13px;color:var(--muted);border:1px solid var(--border);padding:7px 12px;border-radius:99px;background:#ffffff05}
+.hero{text-align:center;padding:72px 0 48px}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid #ffffff14;border-radius:999px;background:#ffffff08;color:#c9c9d2;font-size:13px;margin-bottom:20px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--success);box-shadow:0 0 12px var(--success)}
+h1{font-size:clamp(42px,8vw,76px);line-height:.98;letter-spacing:-4px;margin-bottom:22px}
+.gradient{background:linear-gradient(90deg,#fff,var(--accent2),#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:17px}
+.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.stat{padding:9px 14px;border:1px solid var(--border);border-radius:10px;color:#c7c7d0;font-size:13px;background:#ffffff04}
+.section{padding:30px 0}
+.section-title{font-size:24px;letter-spacing:-.7px;margin-bottom:7px}
+.section-sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:linear-gradient(145deg,#121319,#0d0e13);border:1px solid var(--border);border-radius:20px;padding:22px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:var(--accent);filter:blur(70px);opacity:.08;right:-50px;top:-50px}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#ffffff09;border:1px solid #ffffff10;font-size:20px}
+.card h3{font-size:17px}.card small{color:var(--muted)}
+.address{background:#08090c;border:1px solid #22242e;border-radius:12px;padding:12px 42px 12px 13px;font-family:ui-monospace,SFMono-Regular,monospace;font-size:12px;line-height:1.5;color:#d9d9e0;word-break:break-all;position:relative}
+.copy{position:absolute;right:7px;top:7px;border:0;background:#fff;color:#08080a;border-radius:8px;padding:7px 9px;cursor:pointer;font-weight:700;font-size:11px}
+.copy:hover{opacity:.85}
+.qr-row{display:flex;gap:16px;align-items:center;margin-top:15px}
+.qr{width:104px;height:104px;background:white;padding:7px;border-radius:12px;flex:none}
+.qr img{width:100%;height:100%;display:block}
+.qr-note{font-size:12px;color:var(--muted)}
+.network{display:inline-block;font-size:11px;padding:4px 7px;border-radius:6px;background:#ffffff09;color:#bfc0ca;margin-top:8px}
+.upi{grid-column:1/-1}
+.upi-box{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.upi-id{flex:1;min-width:240px;font-family:ui-monospace,monospace;font-size:15px;background:#08090c;border:1px solid #22242e;padding:13px;border-radius:12px}
+.btn{border:0;border-radius:12px;padding:13px 17px;font-weight:750;cursor:pointer;background:linear-gradient(90deg,var(--accent),#6d5dfc);color:#fff}
+.btn.secondary{background:#ffffff09;border:1px solid var(--border);color:#fff}
+.note{margin-top:12px;color:var(--muted);font-size:12px}
+footer{padding:55px 0 35px;text-align:center;color:#777987;font-size:12px}
+footer strong{color:#c7c7d0}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#f5f5f7;color:#09090b;padding:10px 15px;border-radius:10px;font-size:13px;font-weight:700;transition:.25s;z-index:10}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){
+ .grid{grid-template-columns:1fr}.upi{grid-column:auto}
+ .hero{padding-top:48px}h1{letter-spacing:-2.5px}
+ .qr-row{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<nav>
+  <div class="logo">vaibhav<span>.dev</span></div>
+  <div class="navtag">indie web developer · builder</div>
+</nav>
+
+<header class="hero">
+  <div class="badge"><span class="dot"></span> Building, experimenting & shipping</div>
+  <h1>Support the <span class="gradient">next thing</span><br>I'm building.</h1>
+  <p>
+    Hey, I'm <strong>Vaibhav</strong> — a web developer and indie builder.
+    If you've found something I've made useful, enjoyed a project, or simply want
+    to help me keep building startups and cool stuff, you can support me here.
+  </p>
+  <div class="stats">
+    <div class="stat">⚡ Web Development</div>
+    <div class="stat">🚀 Startup Projects</div>
+    <div class="stat">🛠️ Independent Builder</div>
+  </div>
+</header>
+
+<section class="section">
+  <h2 class="section-title">Pick your way to support</h2>
+  <p class="section-sub">Crypto is preferred, but UPI works perfectly if you're not a crypto user.</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-head"><div class="icon">₿</div><div><h3>Bitcoin</h3><small>BTC mainnet</small></div></div>
+      <div class="address">
+        bc1qu9ps6rt7u8dclhplua4g8xpf8chm46mmrjfzfy
+        <button class="copy" onclick="copyText('bc1qu9ps6rt7u8dclhplua4g8xpf8chm46mmrjfzfy')">COPY</button>
+      </div>
+      <div class="qr-row">
+        <div class="qr"><img alt="Bitcoin QR" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=bitcoin%3Abc1qu9ps6rt7u8dclhplua4g8xpf8chm46mmrjfzfy"></div>
+        <div class="qr-note">Scan with your BTC wallet.<br><span class="network">Bitcoin Network</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="icon">◈</div><div><h3>USDT · BEP-20</h3><small>BNB Smart Chain</small></div></div>
+      <div class="address">
+        0x210D54DD7D903D0AF34da24F662f6032dF327430
+        <button class="copy" onclick="copyText('0x210D54DD7D903D0AF34da24F662f6032dF327430')">COPY</button>
+      </div>
+      <div class="qr-row">
+        <div class="qr"><img alt="USDT BEP20 QR" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=0x210D54DD7D903D0AF34da24F662f6032dF327430"></div>
+        <div class="qr-note">Send USDT only on the<br><span class="network">BEP-20 / BNB Smart Chain</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="icon">⬡</div><div><h3>USDT · Polygon</h3><small>Polygon Network</small></div></div>
+      <div class="address">
+        0x210D54DD7D903D0AF34da24F662f6032dF327430
+        <button class="copy" onclick="copyText('0x210D54DD7D903D0AF34da24F662f6032dF327430')">COPY</button>
+      </div>
+      <div class="qr-row">
+        <div class="qr"><img alt="USDT Polygon QR" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=0x210D54DD7D903D0AF34da24F662f6032dF327430"></div>
+        <div class="qr-note">Send USDT only on the<br><span class="network">Polygon Network</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="icon">₹</div><div><h3>UPI</h3><small>For non-crypto users</small></div></div>
+      <div class="upi-box">
+        <div class="upi-id" id="upi">7348253291-1@fam</div>
+        <button class="btn" onclick="copyText('7348253291-1@fam')">Copy UPI ID</button>
+      </div>
+      <p class="note">Open any UPI app → Pay by UPI ID → enter the ID above.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="text-align:center;padding-top:20px">
+  <div class="card">
+    <h2 style="font-size:22px;margin-bottom:8px">Every bit helps. ❤️</h2>
+    <p style="color:var(--muted);font-size:14px;max-width:650px;margin:auto">
+      Your support goes toward hosting, development tools, experiments, and turning
+      small ideas into useful products. Thanks for being part of the journey.
+    </p>
+  </div>
+</section>
+
+<footer>
+  Built with curiosity by <strong>Vaibhav</strong> · © <span id="year"></span><br>
+  <span style="display:inline-block;margin-top:8px">Always verify the network before sending crypto. Crypto transactions are irreversible.</span>
+</footer>
+</div>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+async function copyText(value){
+  try{
+    await navigator.clipboard.writeText(value);
+  }catch(e){
+    const t=document.createElement("textarea"); t.value=value;
+    document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove();
+  }
+  const toast=document.getElementById("toast");
+  toast.textContent="Copied ✓"; toast.classList.add("show");
+  setTimeout(()=>toast.classList.remove("show"),1500);
+}
+</script>
+</body>
+</html>
